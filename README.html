@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Libft</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<style>
+			body {
+				margin: 0;
+			}
+
+			.markdown-body-content {
+				box-sizing: border-box;
+				min-width: 200px;
+				max-width: 980px;
+				margin: 0 auto;
+				padding: 45px;
+			}
+
+			@media (max-width: 767px) {
+				.markdown-body-content {
+					padding: 15px;
+				}
+			}
+
+			.markdown-body {
+				--base-size-8: 8px;
+				--base-size-16: 16px;
+			}
+		</style>
+	</head>
+	<body class="markdown-body">
+		<article class="markdown-body-content"><p><em>This project has been created as part of the 42 curriculum by nide-wil.</em></p>
+<h1>Libft</h1>
+<h2>Description</h2>
+<p><strong>Libft</strong> is a foundational project in the 42 school curriculum. The objective is to re-code a subset of standard C library (<code class="notranslate">libc</code>) functions—along with additional utility functions and linked list manipulations—from scratch, adhering strictly to the <strong>42 Norm</strong>.</p>
+<p>Since C programmers frequently rely on standard helper functions for string manipulation, memory management, and data structures, creating <code class="notranslate">libft.a</code> allows students to build a deep, hands-on understanding of low-level memory handling, pointers, and dynamic data structures. This library serves as a reusable toolbox for many future projects in the 42 C curriculum (such as <em>get_next_line</em> and <em>ft_printf</em>).</p>
+<h2>Technical Features &amp; Library Overview</h2>
+<p>The compiled static library <code class="notranslate">libft.a</code> contains functions categorized into three main sections:</p>
+<h3>1. Libc Functions (Standard C Library Prototypes)</h3>
+<p>Functions designed to mimic the behavior of standard C library functions (<code class="notranslate">&lt;string.h&gt;</code>, <code class="notranslate">&lt;stdlib.h&gt;</code>, <code class="notranslate">&lt;ctype.h&gt;</code>):</p>
+<ul>
+<li>
+<p><strong>Memory Operations:</strong> <code class="notranslate">ft_memset</code>, <code class="notranslate">ft_bzero</code>, <code class="notranslate">ft_memcpy</code>, <code class="notranslate">ft_memmove</code>, <code class="notranslate">ft_memchr</code>, <code class="notranslate">ft_memcmp</code>, <code class="notranslate">ft_calloc</code></p>
+</li>
+<li>
+<p><strong>String Checks &amp; Conversions:</strong> <code class="notranslate">ft_isalpha</code>, <code class="notranslate">ft_isdigit</code>, <code class="notranslate">ft_isalnum</code>, <code class="notranslate">ft_isascii</code>, <code class="notranslate">ft_isprint</code>, <code class="notranslate">ft_toupper</code>, <code class="notranslate">ft_tolower</code>, <code class="notranslate">ft_atoi</code></p>
+</li>
+<li>
+<p><strong>String Manipulation:</strong> <code class="notranslate">ft_strlen</code>, <code class="notranslate">ft_strlcpy</code>, <code class="notranslate">ft_strlcat</code>, <code class="notranslate">ft_strchr</code>, <code class="notranslate">ft_strrchr</code>, <code class="notranslate">ft_strncmp</code>, <code class="notranslate">ft_strnstr</code>, <code class="notranslate">ft_strdup</code></p>
+</li>
+</ul>
+<h3>2. Additional Utility Functions</h3>
+<p>Higher-level helper functions for string allocation, splitting, and output formatting:</p>
+<ul>
+<li>
+<p><code class="notranslate">ft_substr</code> — Extracts a substring from a string given a starting index and length.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_strjoin</code> — Concatenates two strings into a new dynamically allocated string.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_strtrim</code> — Trims specified characters from the beginning and end of a string.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_split</code> — Splits a string into an array of strings based on a specified delimiter.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_itoa</code> — Converts an integer value into a null-terminated string representation.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_strmapi</code> — Applies a function to each character of a string to create a new string.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_striteri</code> — Applies a function in-place to each character of a string with its index.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_putchar_fd</code> / <code class="notranslate">ft_putstr_fd</code> / <code class="notranslate">ft_putendl_fd</code> / <code class="notranslate">ft_putnbr_fd</code> — Output utility functions to write primitives to a specific file descriptor.</p>
+</li>
+</ul>
+<h3>3. Linked List Functions</h3>
+<p>Functions for creating and manipulating singly linked lists using the <code class="notranslate">t_list</code> structure:</p>
+<ul>
+<li>
+<p><code class="notranslate">ft_lstnew</code> — Allocates and initializes a new list element.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstadd_front</code> — Adds an element to the beginning of a list.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstadd_back</code> — Adds an element to the end of a list.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstsize</code> — Counts the number of nodes in a list.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstlast</code> — Returns the last node of a list.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstdelone</code> — Deletes and frees a single node using a custom function.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstclear</code> — Deletes and frees a node and all its successors.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstiter</code> — Iterates through a list and applies a function to the content of each node.</p>
+</li>
+<li>
+<p><code class="notranslate">ft_lstmap</code> — Iterates through a list, applies a function to create a new list, and handles memory errors gracefully.</p>
+</li>
+</ul>
+<h2>Instructions</h2>
+<h3>Compilation</h3>
+<p>The project comes with a rule-compliant <code class="notranslate">Makefile</code> that compiles all source files (including libc, additional utilities, and linked lists) using <code class="notranslate">cc</code> with <code class="notranslate">-Wall -Wextra -Werror</code> flags.</p>
+<p>To compile the library:</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">make</pre></div>
+<h3>Cleaning Up</h3>
+<ul>
+<li>
+<p>To remove all compiled object files (<code class="notranslate">.o</code>):</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">make clean</pre></div>
+</li>
+<li>
+<p>To remove object files and the generated library binary (<code class="notranslate">libft.a</code>):</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">make fclean</pre></div>
+</li>
+<li>
+<p>To re-compile the entire library from scratch:</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">make re</pre></div>
+</li>
+</ul>
+<h3>Usage in Personal Projects</h3>
+<p>To include <code class="notranslate">libft.a</code> in your own C projects:</p>
+<ol>
+<li>
+<p>Include the header file in your code:</p>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">"libft.h"</span></pre></div>
+</li>
+<li>
+<p>Compile your C file with <code class="notranslate">libft.a</code>:</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">cc -Wall -Wextra -Werror main.c -L. -lft -o my_program</pre></div>
+</li>
+</ol>
+<h2>Testing</h2>
+<p>To verify that your functions work correctly, you can save any of the code snippets below into a temporary file (e.g., <code class="notranslate">test.c</code>) and compile it alongside your static library:</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">cc -Wall -Wextra -Werror test.c -L. -lft -o <span class="pl-c1">test</span>
+./test</pre></div>
+<p>Here are categorized examples to test your functions:</p>
+<h3>1. Character Checks (<code class="notranslate">&lt;ctype.h&gt;</code>) &amp; Conversions</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">"libft.h"</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
+{
+    <span class="pl-c">// ft_isalpha, ft_isdigit, ft_isalnum, ft_isascii, ft_isprint</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_isalpha('A') = %d (attendu: != 0)\n"</span>, <span class="pl-en">ft_isalpha</span>(<span class="pl-c1">'A'</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_isdigit('7') = %d (attendu: != 0)\n"</span>, <span class="pl-en">ft_isdigit</span>(<span class="pl-c1">'7'</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_isalnum('z') = %d (attendu: != 0)\n"</span>, <span class="pl-en">ft_isalnum</span>(<span class="pl-c1">'z'</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_isascii(127) = %d (attendu: != 0)\n"</span>, <span class="pl-en">ft_isascii</span>(<span class="pl-c1">127</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_isprint(' ') = %d (attendu: != 0)\n"</span>, <span class="pl-en">ft_isprint</span>(<span class="pl-c1">' '</span>));
+
+    <span class="pl-c">// ft_atoi &amp; ft_itoa</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_atoi(\"-4256\") = %d (attendu: -4256)\n"</span>, <span class="pl-en">ft_atoi</span>(<span class="pl-s">"   -4256"</span>));
+    
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">str</span> <span class="pl-c1">=</span> <span class="pl-en">ft_itoa</span>(<span class="pl-c1">-1337</span>);
+    <span class="pl-k">if</span> (<span class="pl-s1">str</span>) {
+        <span class="pl-en">printf</span>(<span class="pl-s">"ft_itoa(-1337) = %s (attendu: -1337)\n"</span>, <span class="pl-s1">str</span>);
+        <span class="pl-en">free</span>(<span class="pl-s1">str</span>);
+    }
+    <span class="pl-k">return</span> (<span class="pl-c1">0</span>);
+}</pre></div>
+<h3>2. Memory Manipulation</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">"libft.h"</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
+{
+    <span class="pl-c">// ft_bzero</span>
+    <span class="pl-smi">char</span> <span class="pl-s1">buf</span>[<span class="pl-c1">5</span>] <span class="pl-c1">=</span> <span class="pl-s">"AAAA"</span>;
+    <span class="pl-en">ft_bzero</span>(<span class="pl-s1">buf</span>, <span class="pl-c1">3</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_bzero sur \"AAAA\" (3 octets) -&gt; buf[0]: %d, buf[3]: '%c'\n"</span>, <span class="pl-s1">buf</span>[<span class="pl-c1">0</span>], <span class="pl-s1">buf</span>[<span class="pl-c1">3</span>]);
+
+    <span class="pl-c">// ft_calloc</span>
+    <span class="pl-smi">int</span> <span class="pl-c1">*</span><span class="pl-s1">arr</span> <span class="pl-c1">=</span> (<span class="pl-smi">int</span> <span class="pl-c1">*</span>)<span class="pl-en">ft_calloc</span>(<span class="pl-c1">3</span>, <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>));
+    <span class="pl-k">if</span> (<span class="pl-s1">arr</span>) {
+        <span class="pl-en">printf</span>(<span class="pl-s">"ft_calloc alloue et initialise : arr[0] = %d, arr[2] = %d\n"</span>, <span class="pl-s1">arr</span>[<span class="pl-c1">0</span>], <span class="pl-s1">arr</span>[<span class="pl-c1">2</span>]);
+        <span class="pl-en">free</span>(<span class="pl-s1">arr</span>);
+    }
+    <span class="pl-k">return</span> (<span class="pl-c1">0</span>);
+}</pre></div>
+<h3>3. Memory Operations &amp; Character Casing</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">"libft.h"</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
+{
+    <span class="pl-c">// ft_toupper &amp; ft_tolower</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_toupper('a') = %c (attendu: 'A')\n"</span>, <span class="pl-en">ft_toupper</span>(<span class="pl-c1">'a'</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_tolower('Z') = %c (attendu: 'z')\n"</span>, <span class="pl-en">ft_tolower</span>(<span class="pl-c1">'Z'</span>));
+
+    <span class="pl-c">// ft_memset &amp; ft_memcpy</span>
+    <span class="pl-smi">char</span> <span class="pl-s1">buf</span>[<span class="pl-c1">10</span>] <span class="pl-c1">=</span> <span class="pl-s">"123456789"</span>;
+    <span class="pl-en">ft_memset</span>(<span class="pl-s1">buf</span>, <span class="pl-c1">'A'</span>, <span class="pl-c1">3</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_memset -&gt; %s (attendu: AAA456789)\n"</span>, <span class="pl-s1">buf</span>);
+
+    <span class="pl-smi">char</span> <span class="pl-s1">dest</span>[<span class="pl-c1">10</span>];
+    <span class="pl-en">ft_memcpy</span>(<span class="pl-s1">dest</span>, <span class="pl-s">"hello"</span>, <span class="pl-c1">6</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_memcpy -&gt; %s (attendu: hello)\n"</span>, <span class="pl-s1">dest</span>);
+
+    <span class="pl-c">// ft_memchr &amp; ft_memcmp</span>
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">found</span> <span class="pl-c1">=</span> <span class="pl-en">ft_memchr</span>(<span class="pl-s">"hello"</span>, <span class="pl-c1">'l'</span>, <span class="pl-c1">5</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_memchr -&gt; %s (attendu: llo)\n"</span>, <span class="pl-s1">found</span> ? <span class="pl-s1">found</span> : <span class="pl-s">"NULL"</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_memcmp = %d (attendu: 0)\n"</span>, <span class="pl-en">ft_memcmp</span>(<span class="pl-s">"abc"</span>, <span class="pl-s">"abc"</span>, <span class="pl-c1">3</span>));
+
+    <span class="pl-k">return</span> (<span class="pl-c1">0</span>);
+}</pre></div>
+<h3>4. String &amp; Memory Manipulation</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">"libft.h"</span>
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
+{
+    <span class="pl-c">// ft_strlen &amp; ft_strdup</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strlen(\"Hello\") = %zu (attendu: 5)\n"</span>, <span class="pl-en">ft_strlen</span>(<span class="pl-s">"Hello"</span>));
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">dup</span> <span class="pl-c1">=</span> <span class="pl-en">ft_strdup</span>(<span class="pl-s">"42"</span>);
+    <span class="pl-k">if</span> (<span class="pl-s1">dup</span>) {
+        <span class="pl-en">printf</span>(<span class="pl-s">"ft_strdup(\"42\") = %s\n"</span>, <span class="pl-s1">dup</span>);
+        <span class="pl-en">free</span>(<span class="pl-s1">dup</span>);
+    }
+
+    <span class="pl-c">// ft_strlcpy &amp; ft_strlcat</span>
+    <span class="pl-smi">char</span> <span class="pl-s1">dst</span>[<span class="pl-c1">10</span>] <span class="pl-c1">=</span> <span class="pl-s">"Hi"</span>;
+    <span class="pl-en">ft_strlcpy</span>(<span class="pl-s1">dst</span>, <span class="pl-s">"Hello"</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">dst</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strlcpy -&gt; %s (attendu: Hello)\n"</span>, <span class="pl-s1">dst</span>);
+    <span class="pl-en">ft_strlcat</span>(<span class="pl-s1">dst</span>, <span class="pl-s">"!"</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">dst</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strlcat -&gt; %s (attendu: Hello!)\n"</span>, <span class="pl-s1">dst</span>);
+
+    <span class="pl-c">// ft_strchr, ft_strrchr &amp; ft_strnstr</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strchr(\"hello\", 'e') = %s (attendu: ello)\n"</span>, <span class="pl-en">ft_strchr</span>(<span class="pl-s">"hello"</span>, <span class="pl-c1">'e'</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strrchr(\"hello\", 'l') = %s (attendu: lo)\n"</span>, <span class="pl-en">ft_strrchr</span>(<span class="pl-s">"hello"</span>, <span class="pl-c1">'l'</span>));
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strnstr(\"hello world\", \"world\", 11) = %s (attendu: world)\n"</span>, <span class="pl-en">ft_strnstr</span>(<span class="pl-s">"hello world"</span>, <span class="pl-s">"world"</span>, <span class="pl-c1">11</span>));
+
+    <span class="pl-c">// ft_strncmp &amp; ft_memmove</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strncmp(\"abc\", \"abd\", 2) = %d (attendu: 0)\n"</span>, <span class="pl-en">ft_strncmp</span>(<span class="pl-s">"abc"</span>, <span class="pl-s">"abd"</span>, <span class="pl-c1">2</span>));
+    <span class="pl-smi">char</span> <span class="pl-s1">mem</span>[<span class="pl-c1">10</span>] <span class="pl-c1">=</span> <span class="pl-s">"12345"</span>;
+    <span class="pl-en">ft_memmove</span>(<span class="pl-s1">mem</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>, <span class="pl-s1">mem</span>, <span class="pl-c1">3</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_memmove -&gt; %s (attendu: 11235)\n"</span>, <span class="pl-s1">mem</span>);
+
+    <span class="pl-k">return</span> (<span class="pl-c1">0</span>);
+}</pre></div>
+<h3>5. Advanced String Utilities &amp; File Descriptors</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">"libft.h"</span>
+
+<span class="pl-c">// Fonctions auxiliaires pour mapi et iteri</span>
+<span class="pl-smi">void</span> <span class="pl-en">iter_func</span>(<span class="pl-smi">unsigned <span class="pl-smi">int</span></span> <span class="pl-s1">i</span>, <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">c</span>)
+{
+    (<span class="pl-smi">void</span>)<span class="pl-s1">i</span>;
+    <span class="pl-k">if</span> (<span class="pl-c1">*</span><span class="pl-s1">c</span> &gt;= <span class="pl-c1">'a'</span> <span class="pl-c1">&amp;&amp;</span> <span class="pl-c1">*</span><span class="pl-s1">c</span> &lt;= <span class="pl-c1">'z'</span>)
+        <span class="pl-c1">*</span><span class="pl-s1">c</span> <span class="pl-c1">-=</span> <span class="pl-c1">32</span>; <span class="pl-c">// Passage en majuscule</span>
+}
+
+<span class="pl-smi">char</span> <span class="pl-en">mapi_func</span>(<span class="pl-smi">unsigned <span class="pl-smi">int</span></span> <span class="pl-s1">i</span>, <span class="pl-smi">char</span> <span class="pl-s1">c</span>)
+{
+    (<span class="pl-smi">void</span>)<span class="pl-s1">i</span>;
+    <span class="pl-k">return</span> (<span class="pl-s1">c</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>);
+}
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
+{
+    <span class="pl-c">// ft_substr, ft_strjoin, ft_strtrim</span>
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">sub</span> <span class="pl-c1">=</span> <span class="pl-en">ft_substr</span>(<span class="pl-s">"Hello World"</span>, <span class="pl-c1">0</span>, <span class="pl-c1">5</span>);
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">join</span> <span class="pl-c1">=</span> <span class="pl-en">ft_strjoin</span>(<span class="pl-s">"Hello "</span>, <span class="pl-s">"World"</span>);
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">trim</span> <span class="pl-c1">=</span> <span class="pl-en">ft_strtrim</span>(<span class="pl-s">"xxHelloaxx"</span>, <span class="pl-s">"x"</span>);
+    
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_substr = %s (attendu: Hello)\n"</span>, <span class="pl-s1">sub</span> ? <span class="pl-s1">sub</span> : <span class="pl-s">"NULL"</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strjoin = %s (attendu: Hello World)\n"</span>, <span class="pl-s1">join</span> ? <span class="pl-s1">join</span> : <span class="pl-s">"NULL"</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strtrim = %s (attendu: Helloa)\n"</span>, <span class="pl-s1">trim</span> ? <span class="pl-s1">trim</span> : <span class="pl-s">"NULL"</span>);
+    <span class="pl-en">free</span>(<span class="pl-s1">sub</span>); <span class="pl-en">free</span>(<span class="pl-s1">join</span>); <span class="pl-en">free</span>(<span class="pl-s1">trim</span>);
+
+    <span class="pl-c">// ft_split</span>
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-c1">*</span><span class="pl-s1">tab</span> <span class="pl-c1">=</span> <span class="pl-en">ft_split</span>(<span class="pl-s">"hello,world,42"</span>, <span class="pl-c1">','</span>);
+    <span class="pl-k">if</span> (<span class="pl-s1">tab</span>) {
+        <span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">tab</span>[<span class="pl-s1">i</span>]; <span class="pl-s1">i</span><span class="pl-c1">++</span>) {
+            <span class="pl-en">printf</span>(<span class="pl-s">"ft_split[%d] = %s\n"</span>, <span class="pl-s1">i</span>, <span class="pl-s1">tab</span>[<span class="pl-s1">i</span>]);
+            <span class="pl-en">free</span>(<span class="pl-s1">tab</span>[<span class="pl-s1">i</span>]);
+        }
+        <span class="pl-en">free</span>(<span class="pl-s1">tab</span>);
+    }
+
+    <span class="pl-c">// ft_strmapi &amp; ft_striteri</span>
+    <span class="pl-smi">char</span> <span class="pl-c1">*</span><span class="pl-s1">mapi</span> <span class="pl-c1">=</span> <span class="pl-en">ft_strmapi</span>(<span class="pl-s">"abc"</span>, <span class="pl-s1">mapi_func</span>);
+    <span class="pl-smi">char</span> <span class="pl-s1">str_iter</span>[] <span class="pl-c1">=</span> <span class="pl-s">"hello"</span>;
+    <span class="pl-en">ft_striteri</span>(<span class="pl-s1">str_iter</span>, <span class="pl-s1">iter_func</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_strmapi = %s (attendu: bcd)\n"</span>, <span class="pl-s1">mapi</span> ? <span class="pl-s1">mapi</span> : <span class="pl-s">"NULL"</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_striteri = %s (attendu: HELLO)\n"</span>, <span class="pl-s1">str_iter</span>);
+    <span class="pl-en">free</span>(<span class="pl-s1">mapi</span>);
+
+    <span class="pl-c">// File descriptors (_fd) - Écriture sur la sortie standard (fd 1)</span>
+    <span class="pl-en">ft_putstr_fd</span>(<span class="pl-s">"--- Test _fd functions ---\n"</span>, <span class="pl-c1">1</span>);
+    <span class="pl-en">ft_putstr_fd</span>(<span class="pl-s">"ft_putstr_fd: Hello 42!\n"</span>, <span class="pl-c1">1</span>);
+    <span class="pl-en">ft_putchar_fd</span>(<span class="pl-c1">'C'</span>, <span class="pl-c1">1</span>);
+    <span class="pl-en">ft_putendl_fd</span>(<span class="pl-s">" (ft_putchar_fd + ft_putendl_fd)"</span>, <span class="pl-c1">1</span>);
+    <span class="pl-en">ft_putstr_fd</span>(<span class="pl-s">"ft_putnbr_fd: "</span>, <span class="pl-c1">1</span>);
+    <span class="pl-en">ft_putnbr_fd</span>(<span class="pl-c1">-42</span>, <span class="pl-c1">1</span>);
+    <span class="pl-en">ft_putchar_fd</span>(<span class="pl-c1">'\n'</span>, <span class="pl-c1">1</span>);
+    <span class="pl-k">return</span> (<span class="pl-c1">0</span>);
+}</pre></div>
+<h3>6. Linked List Functions</h3>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;string.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">"libft.h"</span>
+
+<span class="pl-smi">void</span> <span class="pl-en">del_content</span>(<span class="pl-smi">void</span> <span class="pl-c1">*</span><span class="pl-s1">content</span>)
+{
+    <span class="pl-en">free</span>(<span class="pl-s1">content</span>);
+}
+
+<span class="pl-smi">void</span> <span class="pl-en">iter_content</span>(<span class="pl-smi">void</span> <span class="pl-c1">*</span><span class="pl-s1">content</span>)
+{
+    <span class="pl-en">printf</span>(<span class="pl-s">"[%s] "</span>, (<span class="pl-smi">char</span> <span class="pl-c1">*</span>)<span class="pl-s1">content</span>);
+}
+
+<span class="pl-smi">void</span> <span class="pl-c1">*</span><span class="pl-en">map_content</span>(<span class="pl-smi">void</span> <span class="pl-c1">*</span><span class="pl-s1">content</span>)
+{
+    <span class="pl-c">// Fonction simple pour ft_map : duplique le contenu (ou retourne une modification)</span>
+    <span class="pl-k">return</span> (<span class="pl-en">strdup</span>((<span class="pl-smi">char</span> <span class="pl-c1">*</span>)<span class="pl-s1">content</span>));
+}
+
+<span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
+{
+    <span class="pl-c">// ft_lstnew, ft_lstadd_front, ft_lstadd_back</span>
+    <span class="pl-smi">t_list</span> <span class="pl-c1">*</span><span class="pl-s1">head</span> <span class="pl-c1">=</span> <span class="pl-en">ft_lstnew</span>(<span class="pl-en">strdup</span>(<span class="pl-s">"node 1"</span>));
+    <span class="pl-en">ft_lstadd_back</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">head</span>, <span class="pl-en">ft_lstnew</span>(<span class="pl-en">strdup</span>(<span class="pl-s">"node 2"</span>)));
+    <span class="pl-en">ft_lstadd_front</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">head</span>, <span class="pl-en">ft_lstnew</span>(<span class="pl-en">strdup</span>(<span class="pl-s">"node 0"</span>)));
+
+    <span class="pl-c">// ft_lstsize &amp; ft_lstlast</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_lstsize = %d (attendu: 3)\n"</span>, <span class="pl-en">ft_lstsize</span>(<span class="pl-s1">head</span>));
+    
+    <span class="pl-smi">t_list</span> <span class="pl-c1">*</span><span class="pl-s1">last</span> <span class="pl-c1">=</span> <span class="pl-en">ft_lstlast</span>(<span class="pl-s1">head</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_lstlast content = %s (attendu: node 2)\n"</span>, (<span class="pl-smi">char</span> <span class="pl-c1">*</span>)<span class="pl-s1">last</span><span class="pl-c1">-&gt;</span><span class="pl-c1">content</span>);
+
+    <span class="pl-c">// ft_lstiter</span>
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_lstiter result: "</span>);
+    <span class="pl-en">ft_lstiter</span>(<span class="pl-s1">head</span>, <span class="pl-s1">iter_content</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"\n"</span>);
+
+    <span class="pl-c">// ft_lstdelone (test sur un élément isolé)</span>
+    <span class="pl-smi">t_list</span> <span class="pl-c1">*</span><span class="pl-s1">elem_to_del</span> <span class="pl-c1">=</span> <span class="pl-en">ft_lstnew</span>(<span class="pl-en">strdup</span>(<span class="pl-s">"temp"</span>));
+    <span class="pl-en">ft_lstdelone</span>(<span class="pl-s1">elem_to_del</span>, <span class="pl-s1">del_content</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_lstdelone executed successfully\n"</span>);
+
+    <span class="pl-c">// ft_lstmap</span>
+    <span class="pl-smi">t_list</span> <span class="pl-c1">*</span><span class="pl-s1">mapped_list</span> <span class="pl-c1">=</span> <span class="pl-en">ft_lstmap</span>(<span class="pl-s1">head</span>, <span class="pl-s1">map_content</span>, <span class="pl-s1">del_content</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_lstmap size = %d (attendu: 3)\n"</span>, <span class="pl-en">ft_lstsize</span>(<span class="pl-s1">mapped_list</span>));
+    <span class="pl-en">ft_lstclear</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">mapped_list</span>, <span class="pl-s1">del_content</span>);
+
+    <span class="pl-c">// ft_lstclear (sur la liste principale)</span>
+    <span class="pl-en">ft_lstclear</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">head</span>, <span class="pl-s1">del_content</span>);
+    <span class="pl-en">printf</span>(<span class="pl-s">"ft_lstclear done, head = %p (attendu: (nil))\n"</span>, (<span class="pl-smi">void</span> <span class="pl-c1">*</span>)<span class="pl-s1">head</span>);
+
+    <span class="pl-k">return</span> (<span class="pl-c1">0</span>);
+}</pre></div>
+<h2>Resources</h2>
+<h3>References</h3>
+<ul>
+<li>
+<p><a href="https://en.cppreference.com/w/c" rel="nofollow">C Standard Library Reference (cppreference.com)</a> — Detailed specifications for standard C library functions.</p>
+</li>
+<li>
+<p><code class="notranslate">man</code> pages — <code class="notranslate">man 3 memset</code>, <code class="notranslate">man 3 memcpy</code>, <code class="notranslate">man 3 strlcpy</code>, etc., directly in the Linux terminal.</p>
+</li>
+</ul>
+<h3>Artificial Intelligence Usage</h3>
+<p>AI was used solely to assist in writing and formatting this <code class="notranslate">README.md</code> file. The code itself was written entirely by hand without AI assistance.</p></article>
+	</body>
+</html>
